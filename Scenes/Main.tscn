@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Blend/Test.blend" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Blend/test-mage-003-noThumbs-gradient002-finished.blend" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Blend/test-mage-003-noThumbs-gradient002-finished-2.blend" type="PackedScene" id=3]
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="Animation" id=3]
+resource_name = "idk"
+
+[node name="Main" type="Spatial"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+
+[node name="test-mage-003-noThumbs-gradient002-finished-2" parent="WorldEnvironment" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5321, 5.49763, 16.0189 )
+
+[node name="test-mage-003-noThumbs-gradient002-finished" parent="WorldEnvironment" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.919741, 5.37014, -13.8217 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Test" parent="MeshInstance" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4706, -3.6422, -6.24185 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/idk = SubResource( 3 )
